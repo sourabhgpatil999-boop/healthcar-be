@@ -158,19 +158,134 @@ Notifications
 * Protected Routes
 * Role Based Access Control
 * Secure API Communication
+---
+
+# Healthcare Connector API Endpoints
+
+## Authentication APIs
+
+POST /api/v1/auth/login
 
 ---
 
-## Future Enhancements
+## Provider APIs
 
-* Authorization Analytics Dashboard
-* AI Assisted Authorization Review
-* Advanced Search and Filters
-* Audit Logging
-* Report Generation
-* Email Notifications
+POST /api/v1/providers
+
+GET /api/v1/providers
+
+GET /api/v1/providers/{id}
 
 ---
+
+## Payer APIs
+
+POST /api/v1/payers
+
+GET /api/v1/payers
+
+GET /api/v1/payers/{id}
+
+---
+
+## Patient APIs
+
+POST /api/v1/patients
+
+GET /api/v1/patients
+
+GET /api/v1/patients/{id}
+
+---
+
+## Authorization APIs
+
+POST /api/v1/authorizations
+
+GET /api/v1/authorizations
+
+GET /api/v1/authorizations/{id}
+
+PUT /api/v1/authorizations/{id}/review
+
+PUT /api/v1/authorizations/{id}/approve
+
+PUT /api/v1/authorizations/{id}/reject
+
+PUT /api/v1/authorizations/{id}/clarification-request
+
+PUT /api/v1/authorizations/{id}/clarification-response
+
+---
+
+## Communication APIs
+
+POST /api/v1/communications
+
+GET /api/v1/communications/{authorizationId}
+
+---
+
+## Notification APIs
+
+GET /api/v1/notifications
+
+---
+
+# Authorization Workflow
+
+Provider Creates Authorization Request
+
+↓
+
+SUBMITTED
+
+↓
+
+UNDER_REVIEW
+
+↓
+
+APPROVED / REJECTED
+
+---
+
+# Security
+
+JWT Authentication
+
+Role-Based Access Control
+
+Roles:
+
+ROLE_ADMIN
+
+ROLE_PROVIDER
+
+ROLE_PAYER
+
+---
+
+# Database Tables
+
+users
+
+roles
+
+user_roles
+
+providers
+
+payers
+
+patients
+
+authorization_requests
+
+communications
+
+notifications
+
 
 ## Author
 
